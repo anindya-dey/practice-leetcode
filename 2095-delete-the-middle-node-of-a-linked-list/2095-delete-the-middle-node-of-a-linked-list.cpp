@@ -21,11 +21,13 @@ public:
             fast = fast->next->next;
         }
         
+        /*
         ListNode *nodeToDel = slow->next;
         slow->next = slow->next->next;
         nodeToDel = nullptr;
         delete nodeToDel;
-        
+        */
+        slow->next = slow->next->next;
         return dummy->next;
     }
 };
