@@ -17,8 +17,15 @@ public:
         
         while(slow && fast) {
             fast = fast->next;
-            if(slow == fast) return true;
-            if(fast) fast = fast->next;
+            
+            if(slow == fast) {
+                return true;
+            }
+            
+            if(fast) {
+                fast = fast->next;
+            }
+            
             slow = slow->next;
         }
         
