@@ -35,7 +35,6 @@ public:
         slow->next = slow->next->next;
         nodeToDelete->next = nullptr;
         delete nodeToDelete;
-        
         return head;
     }
 };
