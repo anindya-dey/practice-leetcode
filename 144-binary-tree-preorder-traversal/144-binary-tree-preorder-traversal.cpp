@@ -15,9 +15,8 @@ public:
         vector<int> result;
         if(!root) return result;
         
-        TreeNode *curr = root;
         stack<TreeNode*> s;
-        s.push(curr);
+        s.push(root);
         
         while(!s.empty()) {
             TreeNode *temp = s.top();
