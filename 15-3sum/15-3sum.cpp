@@ -16,10 +16,8 @@ public:
                     
                     if(sum == 0) {
                         result.push_back({ a, nums[lo], nums[hi] });
-                        while(lo < hi && nums[lo] == nums[lo + 1]) lo++;
-                        while(lo < hi && nums[hi] == nums[hi - 1]) hi--;
-
-                        lo++; hi--;
+                        while(lo < hi && nums[lo] == nums[++lo]);
+                        while(lo < hi && nums[hi] == nums[--hi]);
                     } else if(sum < 0) {
                         lo++;
                     } else {
