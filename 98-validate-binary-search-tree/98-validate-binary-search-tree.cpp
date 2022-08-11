@@ -20,8 +20,6 @@ public:
     }
     
     bool isValidBST(TreeNode* root) {
-        if(!root) return true;
-        
         return checkBST(root->left, LONG_MIN, root->val) && checkBST(root->right, root->val, LONG_MAX);
     }
 };
