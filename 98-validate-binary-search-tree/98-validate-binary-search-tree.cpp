@@ -14,7 +14,7 @@ public:
     bool checkBST(TreeNode* node, long left, long right) {
         if(!node) return true;
         
-        if(!((left < node->val) && (node->val < right))) return false;
+        if((left >= node->val) || (node->val >= right)) return false;
         
         return checkBST(node->left, left, node->val) && checkBST(node->right, node->val, right);
     }
