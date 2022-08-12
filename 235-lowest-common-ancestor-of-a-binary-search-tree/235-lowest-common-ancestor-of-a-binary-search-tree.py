@@ -10,17 +10,10 @@ class Solution:
         if not root:
             return None
         
-        if root.val == p.val or root.val == q.val:
+        if p.val < root.val > q.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        elif p.val > root.val < q.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        else:
             return root
-        
-        left = self.lowestCommonAncestor(root.left, p, q)
-        right = self.lowestCommonAncestor(root.right, p, q)
-        
-        if left and right:
-            return root
-        
-        if not left and not right:
-            return None
-        
-        return left if left else right
         
