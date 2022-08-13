@@ -6,6 +6,15 @@ public:
         
         if(m < n) return "";
         
+        if(n == 1) {
+            char _t = t[0];
+            for(auto c: s) {
+                if(c == _t) return t;
+            }
+            
+            return "";
+        }
+        
         int l = 0, 
             r = 0, 
             counter = 0,
