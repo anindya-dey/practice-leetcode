@@ -16,12 +16,10 @@ public:
         
         vector<vector<int>> result;
         vector<int> temp;
+
         queue<TreeNode*> q;
         q.push(root);
         q.push(nullptr);
-        
-        TreeNode *L = root->left;
-        TreeNode *R = root->left;
         
         while(!q.empty()) {
             TreeNode *node = q.front();
@@ -34,8 +32,8 @@ public:
             } else {
                 temp.push_back(node->val);
                 
-                L = node->left;
-                R = node->right;
+                TreeNode *L = node->left;
+                TreeNode *R = node->right;
 
                 if(L) q.push(L);
                 if(R) q.push(R);
