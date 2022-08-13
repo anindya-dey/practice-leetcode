@@ -19,7 +19,6 @@ public:
         
         int minD = min(l, r),
             maxD = max(l, r);
-        
         return 1 + (minD ? minD : maxD);
     }
 };
