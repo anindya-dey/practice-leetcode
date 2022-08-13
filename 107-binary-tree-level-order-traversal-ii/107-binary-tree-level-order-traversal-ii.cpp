@@ -44,5 +44,4 @@ public:
         
         return result;
     }
-    
 };
