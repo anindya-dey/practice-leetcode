@@ -17,8 +17,7 @@ public:
             unordered_map<string, int> seenWords;
             int j = 0;
             for(; j < totalWords; j++) {
-                int wordIndex = i + j * wordSize;
-                string subWord = s.substr(wordIndex, wordSize);
+                string subWord = s.substr(i + j * wordSize, wordSize);
                 
                 if(!frequencyMap[subWord]) break;
                 
