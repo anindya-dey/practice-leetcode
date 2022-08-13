@@ -17,6 +17,6 @@ public:
         int leftDepth = 1 + maxDepth(root->left);
         int rightDepth = 1 + maxDepth(root->right);
         
-        return leftDepth > rightDepth ? leftDepth : rightDepth;
+        return max(leftDepth, rightDepth);
     }
 };
