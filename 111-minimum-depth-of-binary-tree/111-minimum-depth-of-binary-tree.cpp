@@ -17,6 +17,8 @@ public:
         int l = minDepth(root->left),
             r = minDepth(root->right);
         
-        return 1 + (min(l, r) ? min(l, r) : max(l, r));
+        int minD = min(l, r), maxD = max(l, r);
+        
+        return 1 + (minD ? minD : maxD);
     }
 };
