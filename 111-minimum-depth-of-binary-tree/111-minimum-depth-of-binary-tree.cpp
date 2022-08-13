@@ -14,10 +14,10 @@ public:
     int minDepth(TreeNode* root) {
         if(!root) return 0;
         
-        int l = minDepth(root->left),
-            r = minDepth(root->right),
-            minD = min(l, r),
-            maxD = max(l, r);
+        int l = minDepth(root->left);
+        int r = minDepth(root->right);
+        int minD = min(l, r);
+        int maxD = max(l, r);
         
         return 1 + (minD ? minD : maxD);
     }
