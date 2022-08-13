@@ -37,8 +37,6 @@ public:
         
         if (len == INT_MAX) return "";
         
-        cout << "start: " << start << ", len: " << len << "\n";
-        
         return s.substr(start, len);
     }
 };
