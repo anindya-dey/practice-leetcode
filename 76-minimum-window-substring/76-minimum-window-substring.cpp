@@ -7,6 +7,10 @@ public:
         if(m < n) return "";
         
         if(n == 1) {
+            if(m == 1) {
+                return s == t ? t : "";
+            }
+            
             char _t = t[0];
             for(auto c: s) {
                 if(c == _t) return t;
