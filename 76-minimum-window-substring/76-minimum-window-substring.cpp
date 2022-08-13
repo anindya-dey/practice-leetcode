@@ -6,6 +6,7 @@ public:
         
         if(m < n) return "";
         
+        /*
         if(n == 1) {
             if(m == 1) {
                 return s == t ? t : "";
@@ -18,6 +19,7 @@ public:
             
             return "";
         }
+        */
         
         int l = 0, 
             r = 0, 
