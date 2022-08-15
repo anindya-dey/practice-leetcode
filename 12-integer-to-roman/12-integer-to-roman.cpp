@@ -1,7 +1,6 @@
 class Solution {
 public:
     string intToRoman(int num) {
-        /*
         pair<int, string> m[13] = {};
         m[0] = {1000, "M"};
         m[1] = {900, "CM"};
@@ -20,6 +19,7 @@ public:
         string ans = "";
         
         for(auto p : m) {
+            /*
             int count = num / p.first;
             
             while(count--) {
@@ -29,26 +29,14 @@ public:
             num %= p.first;
             
             if(num == 0) break;
+            */
+            while(num >= p.first) {
+                num -= p.first;
+                ans += p.second;
+            }
         }
         
         
         return ans;
-        */
-        
-        
-        string res;
-        string sym[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int val[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        
-        for(int i=0; num != 0; i++)
-        {
-            while(num >= val[i])
-            {
-                num -= val[i];
-                res += sym[i];
-            }
-        }
-        
-        return res;
     }
 };
