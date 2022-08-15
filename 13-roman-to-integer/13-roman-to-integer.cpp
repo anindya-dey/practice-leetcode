@@ -12,11 +12,13 @@ public:
         };
         
         int n = s.size();
-        int ans = 0;
+        int ans = m[s[n-1]];
         
-        for(int i = 0; i < n; i++) {
+        for(int i = n-2; i >= 0; i--) {
+            int prev = m[s[i+1]];
             int curr = m[s[i]];
-            if(((i + 1) < n) && (curr < m[s[i+1]])) {
+            
+            if(curr < prev) {
                 ans -= curr;
             } else {
                 ans += curr;
