@@ -22,6 +22,8 @@ class Solution:
             while num >= r[0]:
                 num -= r[0]
                 ans += r[1]
+                
+            if num == 0: break
             
         return ans
         
