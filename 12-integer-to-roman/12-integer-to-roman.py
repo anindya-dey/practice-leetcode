@@ -19,16 +19,9 @@ class Solution:
         ans = ''
         
         for i, r in enumerate(m):
-            count = num // r[0];
-            
-            while count > 0:
+            while num >= r[0]:
+                num -= r[0]
                 ans += r[1]
-                count -= 1
-                
-            num = num % r[0]
-            
-            if num == 0:
-                break
             
         return ans
         
