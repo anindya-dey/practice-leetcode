@@ -18,7 +18,7 @@ class Solution:
         
         ans = ''
         
-        for i, r in enumerate(m):
+        for r in m:
             while num >= r[0]:
                 num -= r[0]
                 ans += r[1]
