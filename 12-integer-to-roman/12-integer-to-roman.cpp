@@ -19,13 +19,13 @@ public:
         
         string ans = "";
         
-        for(auto p : m) {
-            if(num == 0) break;
-            
+        for(auto p : m) {           
             while(num >= p.first) {
                 num -= p.first;
                 ans += p.second;
             }
+            
+            if(num == 0) break;
         }
         
         
