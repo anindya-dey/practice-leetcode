@@ -1,7 +1,6 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        /*
         vector<int> ch(26,0);
         int n = s.size();
         
@@ -14,8 +13,8 @@ public:
         }
         
         return -1;
-        */
         
+        /*
         unordered_map<char, int> m;
         int n = s.size();
         int ans = INT_MAX;
@@ -33,5 +32,6 @@ public:
         }
         
         return (ans == INT_MAX) ? -1 : ans;
+        */
     }
 };
