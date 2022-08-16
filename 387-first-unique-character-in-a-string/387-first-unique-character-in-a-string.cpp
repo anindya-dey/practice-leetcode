@@ -28,8 +28,8 @@ public:
             }
         }
         
-        for(auto k : m) {
-            ans = min(k.second, ans);
+        for(auto it : m) {
+            ans = min(it.second, ans);
         }
         
         return (ans == INT_MAX) ? -1 : ans;
