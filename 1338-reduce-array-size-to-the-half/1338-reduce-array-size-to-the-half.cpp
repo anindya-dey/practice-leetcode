@@ -2,23 +2,24 @@ class Solution {
 public:
     int minSetSize(vector<int>& arr) {
         int size = arr.size();
-        int n = size;
+        int half_size = size / 2;
         int count = 0;
-        unordered_map<int, int> m;
-        multimap<int, int, greater<int>> c;
+        unordered_map<int, int> counts;
+        multimap<int, int, greater<int>> frequencies;
         
         for(auto a : arr) {
-            m[a] += 1;
+            counts[a] += 1;
         }
         
-        for(auto i : m) {
-            c.insert({i.second, i.first});
+        for(auto i : counts) {
+            frequencies.insert({i.second, i.first});
         }
         
-        for(auto j : c) {
+        for(auto j : frequencies) {
             size -= j.first;
             count += 1;
-            if(size <= (n/2)) break;
+            
+            if(size <= half_size) break;
         }
         
         return count;
