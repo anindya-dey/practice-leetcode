@@ -1,44 +1,29 @@
 class Solution {
 public:
     int minSetSize(vector<int>& arr) {
-        /*
         int size = arr.size();
         int half_size = size / 2;
         int count = 0;
         unordered_map<int, int> counts;
-        multimap<int, int, greater<int>> frequencies;
+        vector<int> frequencies(size + 1);
         
         for(auto a : arr) {
             counts[a] += 1;
         }
         
-        for(auto [i, f] : counts) {
-            frequencies.insert({f, i});
+        for(auto [_, f] : counts) {
+            frequencies[f]++;
         }
         
-
-        for(auto [f, _] : frequencies) {
-            size -= f;
+        int f = size;
+        while(size > half_size) {
+            while(frequencies[f] == 0) --f;
+            
             count++;
-            if(size <= half_size) break;
+            size -= f;
+            frequencies[f]--;
         }
         
         return count;
-        */
-        int n = arr.size();
-        unordered_map<int, int> cnt;
-        for (int x : arr) ++cnt[x];
-
-        vector<int> counting(n + 1);
-        for (auto [_, freq] : cnt) ++counting[freq];
-
-        int ans = 0, removed = 0, half = n / 2, freq = n;
-        while (removed < half) {
-            ans += 1;
-            while (counting[freq] == 0) --freq;
-            removed += freq;
-            --counting[freq];
-        }
-        return ans;
     }
 };
