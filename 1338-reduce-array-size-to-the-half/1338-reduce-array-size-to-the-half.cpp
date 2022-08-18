@@ -11,14 +11,14 @@ public:
             counts[a] += 1;
         }
         
-        for(auto i : counts) {
-            frequencies.insert({i.second, i.first});
+        for(auto [i, f] : counts) {
+            frequencies.insert({f, i});
         }
         
-        for(auto j : frequencies) {
-            size -= j.first;
-            count += 1;
-            
+
+        for(auto [f, _] : frequencies) {
+            size -= f;
+            count++;
             if(size <= half_size) break;
         }
         
