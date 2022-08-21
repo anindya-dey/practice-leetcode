@@ -3,10 +3,10 @@ private:
     bool stampEqualsSubsequence(string stamp, string target, int position) {
         int n = stamp.length();
         
-        for(int i = position; i < position + n; i++) {
-            if(target[i] == '?') continue;
+        for(int i = 0; i < n; i++) {
+            if(target[i + position] == '?') continue;
             
-            if(stamp[i - position] != target[i]) {
+            if(stamp[i] != target[i + position]) {
                 return false;
             }
         }
