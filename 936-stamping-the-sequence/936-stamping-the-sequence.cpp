@@ -34,14 +34,14 @@ public:
         int turn = 0;
         int maxTurns = 10*n;
         vector<int> result;
-        unordered_set<int> visited;
+        vector<bool> visited(n, false);
         
         while(turn < maxTurns) {
             bool replaced = false;
             
             for(int i = 0; i <= n - m; i++) {
                 // check if stamp equals target subsequence
-                if(visited.find(i) == visited.end() && stampEqualsSubsequence(stamp, target, i)) {
+                if(!visited[i] && stampEqualsSubsequence(stamp, target, i)) {
                     // replace the subsequence in target with "?"
                     count += replaceSubsequence(stamp, target, i);
                     
@@ -57,7 +57,7 @@ public:
                     replaced = true;
                     
                     // add position to visited to not repeat the same steps again
-                    visited.insert(i);
+                    visited[i] = true;
                 }
             }
             
