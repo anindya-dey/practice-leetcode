@@ -1,7 +1,8 @@
 class Solution {
 public:
     bool isPowerOfFour(int n) {
-        if(n <= 0) return false;
+        // (n > 0)
+        // -- The number should be positive and greater than zero
         
         // (n & (n-1) == 0)
         // -- Is there only one 1?
@@ -14,6 +15,6 @@ public:
         // -- This will exclude those numbers which are power of 2 but not of 4 (like 2, 8, 32, etc)
         // -- 0x55555555 = Hex representation of 0101 0101 0101 ... 0101
         
-        return ((n & (n-1)) == 0) && ((n & 0x55555555) != 0);
+        return (n> 0) && ((n & (n-1)) == 0) && ((n & 0x55555555) != 0);
     }
 };
