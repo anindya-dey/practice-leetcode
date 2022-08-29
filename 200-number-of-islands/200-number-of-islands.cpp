@@ -1,16 +1,16 @@
 class Solution {
 private:
-    void travelIsland(vector<vector<char>> &grid, int row, int col) {
-        if((row < 0) || (col < 0) || (row >= grid.size()) || (col >= grid[0].size())) return;
+    void travelIsland(vector<vector<char>> &grid, int row, int col, int maxRow, int maxCol) {
+        if((row < 0) || (col < 0) || (row >= maxRow) || (col >= maxCol)) return;
         
         if(grid[row][col] == '0' || grid[row][col] == '2') return;
         
         grid[row][col] = '2';
         
-        travelIsland(grid, row - 1, col);
-        travelIsland(grid, row + 1, col);
-        travelIsland(grid, row, col - 1);
-        travelIsland(grid, row, col + 1);
+        travelIsland(grid, row - 1, col, maxRow, maxCol);
+        travelIsland(grid, row + 1, col, maxRow, maxCol);
+        travelIsland(grid, row, col - 1, maxRow, maxCol);
+        travelIsland(grid, row, col + 1, maxRow, maxCol);
     }
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -24,7 +24,7 @@ public:
                 
                 islandCount++;
                 
-                travelIsland(grid, i, j);
+                travelIsland(grid, i, j, row, col);
             }
         }
         
