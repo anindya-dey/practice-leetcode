@@ -7,15 +7,21 @@ public:
             bool isDivisibleBy3 = (i % 3) == 0;
             bool isDivisibleBy5 = (i % 5) == 0;
             
-            if(isDivisibleBy3 && isDivisibleBy5) {
-                result.push_back("FizzBuzz");
-            } else if(isDivisibleBy3) {
-                result.push_back("Fizz");
-            } else if(isDivisibleBy5) {
-                result.push_back("Buzz");
-            } else {
-                result.push_back(to_string(i));
+            string str = "";
+            
+            if(isDivisibleBy3) {
+                str += "Fizz";
             }
+            
+            if(isDivisibleBy5) {
+                str += "Buzz";
+            }
+            
+            if(str.empty()) {
+                str += to_string(i);
+            }
+            
+            result.push_back(str);
         }
         
         return result;
