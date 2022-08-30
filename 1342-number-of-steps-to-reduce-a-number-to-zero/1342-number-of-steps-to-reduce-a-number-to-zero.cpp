@@ -7,7 +7,7 @@ public:
             if((num & 1) == 1) {
                 num -= 1;
             } else {
-                num = num >> 1;
+                num >>= 1;
             }
             steps++;
         }
