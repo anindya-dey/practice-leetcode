@@ -38,7 +38,6 @@ public:
             dfs(heights, i, cols - 1, INT_MIN, atlantic);
         }
         
-        // populate result
         for(int i = 0; i < rows; i++) {
             for(int j = 0; j < cols; j++) {
                 if((pacific.find({i, j}) != pacific.end()) && (atlantic.find({i, j}) != atlantic.end())) {
