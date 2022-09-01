@@ -21,8 +21,8 @@ private:
         }
         
         return count + countGoodNodes(node->left, max(node->val, limit)) + countGoodNodes(node->right, max(node->val, limit));
-        
     }
+
 public:
     int goodNodes(TreeNode* root) {
         if(!root) return 0;
