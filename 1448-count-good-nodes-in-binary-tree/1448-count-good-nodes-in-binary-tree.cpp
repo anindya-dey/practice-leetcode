@@ -14,11 +14,11 @@ private:
     int countGoodNodes(TreeNode* node, int limit) {
         if(!node) return 0;
         
-        int count = 0;
+        if(node->val >= limit) {
+            return 1 + countGoodNodes(node->left, node->val) + countGoodNodes(node->right, node->val);
+        }
         
-        if(node->val >= limit) count = 1;
-        
-        return count + countGoodNodes(node->left, max(node->val, limit)) + countGoodNodes(node->right, max(node->val, limit));
+        return countGoodNodes(node->left, limit) + countGoodNodes(node->right, limit);
     }
 
 public:
