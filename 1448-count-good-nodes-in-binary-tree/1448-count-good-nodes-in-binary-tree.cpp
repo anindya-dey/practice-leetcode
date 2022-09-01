@@ -19,6 +19,14 @@ private:
         }
         
         return countGoodNodes(node->left, limit) + countGoodNodes(node->right, limit);
+        
+        /*
+        int count = 0;
+        
+        if(node->val >= limit) count = 1;
+        
+        return count + countGoodNodes(node->left, max(node->val, limit)) + countGoodNodes(node->right, max(node->val, limit));
+        */
     }
 
 public:
