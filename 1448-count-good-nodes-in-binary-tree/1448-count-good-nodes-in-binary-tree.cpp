@@ -20,6 +20,7 @@ private:
         
         return countGoodNodes(node->left, limit) + countGoodNodes(node->right, limit);
     }
+
 public:
     int goodNodes(TreeNode* root) {
         if(!root) return 0;
