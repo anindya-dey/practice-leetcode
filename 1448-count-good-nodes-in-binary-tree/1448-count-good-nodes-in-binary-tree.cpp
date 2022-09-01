@@ -16,9 +16,7 @@ private:
         
         int count = 0;
         
-        if(node->val >= limit) {
-            count = 1;
-        }
+        if(node->val >= limit) count = 1;
         
         return count + countGoodNodes(node->left, max(node->val, limit)) + countGoodNodes(node->right, max(node->val, limit));
     }
