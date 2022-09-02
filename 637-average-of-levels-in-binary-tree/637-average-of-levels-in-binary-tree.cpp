@@ -16,6 +16,7 @@ public:
         
         if(!root) return res;
         
+        /*
         queue<TreeNode*> q;
         q.push(root);
         q.push(nullptr);
@@ -50,6 +51,25 @@ public:
             if(curr->right) {
                 q.push(curr->right);
             }
+        }
+        */
+        
+        queue<TreeNode*> q;
+        q.push(root);
+        
+        while(!q.empty()) {
+            double sum = 0;
+            int size = q.size();
+            for(int i = 0; i < size; i++) {
+                TreeNode* curr = q.front();
+                q.pop();
+                
+                sum += curr->val;
+                
+                if(curr->left) q.push(curr->left);
+                if(curr->right) q.push(curr->right);
+            }
+            res.push_back(sum /(double)size);
         }
         
         return res;
