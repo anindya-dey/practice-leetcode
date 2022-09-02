@@ -16,7 +16,6 @@ public:
         
         if(!root) return res;
         
-        /*
         queue<TreeNode*> q;
         q.push(root);
         q.push(nullptr);
@@ -29,9 +28,7 @@ public:
             q.pop();
             
             if(!curr) {
-               
-                double avg = sum / count;
-                res.push_back(avg);
+                res.push_back(sum / count);
                 sum = 0;
                 count = 0;
                 
@@ -52,8 +49,9 @@ public:
                 q.push(curr->right);
             }
         }
-        */
         
+        
+        /*
         queue<TreeNode*> q;
         q.push(root);
         
@@ -71,6 +69,7 @@ public:
             }
             res.push_back(sum/(double)size);
         }
+        */
         
         return res;
     }
