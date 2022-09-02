@@ -69,7 +69,7 @@ public:
                 if(curr->left) q.push(curr->left);
                 if(curr->right) q.push(curr->right);
             }
-            res.push_back(sum /(double)size);
+            res.push_back(sum/(double)size);
         }
         
         return res;
