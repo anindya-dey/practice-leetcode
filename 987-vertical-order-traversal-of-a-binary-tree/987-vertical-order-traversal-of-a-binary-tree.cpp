@@ -30,8 +30,6 @@ public:
                 int x = p.first;
                 TreeNode *node = p.second;
                 
-                // cout << "X: " << x << ", Val: " << node->val << "\n";
-                
                 mapset[x].insert(node->val);
                 
                 if(node->left) {
