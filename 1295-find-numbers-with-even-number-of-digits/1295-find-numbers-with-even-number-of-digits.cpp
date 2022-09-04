@@ -13,16 +13,16 @@ public:
         int countEvenDigits = 0;
         
         for(auto n : nums) {
-            /*
-            if(countDigits(n) % 2 == 0) {
+            if((countDigits(n) % 2) == 0) {
                 countEvenDigits++;
             }
-            */
             
+            /*
             if(( 10<=n && n<=99) || (1000<=n && n<=9999 ) || ( n==100000 ))
             {
                countEvenDigits++;
             }
+            */
         }
         
         return countEvenDigits;
