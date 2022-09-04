@@ -8,6 +8,7 @@ private:
         }
         return count;
     }
+
 public:
     int findNumbers(vector<int>& nums) {
         int countEvenDigits = 0;
