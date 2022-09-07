@@ -15,11 +15,16 @@ public:
         if(!root) return "";
         
         string res = to_string(root->val);
-        string left = "(" + tree2str(root->left) + ")";
-        string right = "(" + tree2str(root->right) + ")";
         
-        if((left == "()" && right != "()") || (left != "()")) res += left;
-        if(right != "()") res += right;
+        if(root->left) {
+            res += "(" + tree2str(root->left) + ")";
+        } else if(root->right) {
+            res += "()";
+        }
+        
+        if(root->right) {
+            res += "(" + tree2str(root->right) + ")";
+        }
         
         return res;
     }
