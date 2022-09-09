@@ -11,16 +11,15 @@ public:
         sort(properties.begin(), properties.end(), sortByAttack);
         
         int count = 0;
-        int n = properties.size();
-        int maxDefense = properties[0][1];
+        int maxDefense = INT_MIN;
         
-        for(int i = 1; i < n; i++) {           
-            if(properties[i][1] < maxDefense) {
+        for(auto prop : properties) {           
+            if(prop[1] < maxDefense) {
                 count++;
             }
             
-            if(properties[i][1] > maxDefense) {
-                maxDefense = properties[i][1];
+            if(prop[1] > maxDefense) {
+                maxDefense = prop[1];
             }
         }
         
