@@ -8,8 +8,6 @@ private:
     }
 public:
     int numberOfWeakCharacters(vector<vector<int>>& properties) {
-        map<int, vector<vector<int>>, greater<int>> m;
-        
         sort(properties.begin(), properties.end(), sortByAttack);
         
         int count = 0;
