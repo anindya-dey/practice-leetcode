@@ -19,9 +19,7 @@ public:
                 count++;
             }
             
-            if(properties[i][1] > maxDefense) {
-                maxDefense = properties[i][1];
-            }
+            maxDefense = max(maxDefense, properties[i][1]);
         }
         
         return count;
