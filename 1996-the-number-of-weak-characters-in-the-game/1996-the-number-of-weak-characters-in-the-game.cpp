@@ -16,13 +16,13 @@ public:
         int n = properties.size();
         int maxDefense = properties[0][1];
         
-        for(int i = 1; i < n; i++) {
-            if(properties[i][1] > maxDefense) {
-                maxDefense = properties[i][1];
-            }
-            
+        for(int i = 1; i < n; i++) {           
             if(properties[i][1] < maxDefense) {
                 count++;
+            }
+            
+            if(properties[i][1] > maxDefense) {
+                maxDefense = properties[i][1];
             }
         }
         
