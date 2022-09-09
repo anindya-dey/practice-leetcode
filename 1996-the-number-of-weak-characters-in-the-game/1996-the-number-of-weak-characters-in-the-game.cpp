@@ -14,13 +14,13 @@ public:
         int maxDefense = INT_MIN;
         
         for(auto prop : properties) {           
-            if(prop[1] < maxDefense) {
+            int currDefense = prop[1];
+            
+            if(currDefense < maxDefense) {
                 count++;
             }
             
-            if(prop[1] > maxDefense) {
-                maxDefense = prop[1];
-            }
+            maxDefense = max(maxDefense, currDefense);
         }
         
         return count;
