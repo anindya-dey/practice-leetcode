@@ -33,15 +33,13 @@ public:
         
         for(int i = n - 1; i >= 0; i--) {
             for(int buy = 0; buy <= 1; buy++) {
+                int profit = 0;
                 if(buy) {
-                    int buying = -prices[i] + dp[i+1][0];
-                    int notBuying = dp[i+1][1];
-                    dp[i][buy] = max(buying, notBuying);
+                    profit = max(-prices[i] + dp[i+1][0], dp[i+1][1]);
                 } else {
-                    int selling = prices[i] + dp[i+1][1];
-                    int notSelling = dp[i+1][0];
-                    dp[i][buy] = max(selling, notSelling);
+                    profit = max(prices[i] + dp[i+1][1], dp[i+1][0]);
                 }
+                dp[i][buy] = profit;
             }
         }
         
