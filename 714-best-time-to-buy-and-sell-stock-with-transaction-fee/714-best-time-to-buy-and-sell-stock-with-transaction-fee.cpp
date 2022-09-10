@@ -5,8 +5,9 @@ public:
         int buy = 0, notBuy = 0;
         
         for(int i = n-1; i >= 0; i--) {
-            buy = max(-prices[i] + notBuy, buy);
-            notBuy = max(prices[i] - fee + buy, notBuy);
+            int price = prices[i];
+            buy = max(-price + notBuy, buy);
+            notBuy = max(price - fee + buy, notBuy);
         }
 
         return buy;
