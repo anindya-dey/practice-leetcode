@@ -17,9 +17,9 @@ public:
         
         int maxProfit = 0;
         int maxCurrProfit = 0;
-        int n = prices.size();
+        //int n = prices.size();
         
-        for(int i = 1; i < n; i++) {
+        for(int i = 1; i < prices.size(); i++) {
             maxCurrProfit += prices[i] - prices[i-1];
             maxCurrProfit = max(0, maxCurrProfit);
             maxProfit = max(maxProfit, maxCurrProfit);
