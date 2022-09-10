@@ -56,10 +56,9 @@ public:
         int currBuy = 0, currNotBuy = 1;
         
         for(int i = n - 1; i >= 0; i--) {
-            for(int buy = 0; buy <= 1; buy++) {
-                currBuy = max(-prices[i] + prevNotBuy, prevBuy);
-                currNotBuy = max(prices[i] + prevBuy, prevNotBuy);
-            }
+            currBuy = max(-prices[i] + prevNotBuy, prevBuy);
+            currNotBuy = max(prices[i] + prevBuy, prevNotBuy);
+            
             prevBuy = currBuy;
             prevNotBuy = currNotBuy;
         }
