@@ -1,4 +1,5 @@
 class Solution {
+/*
 private:
     int recurse(vector<int> &prices, int n, int idx, bool buy, vector<vector<int>> &dp) {
         if(idx == n) return 0;
@@ -19,6 +20,7 @@ private:
         
         return dp[idx][buy] = profit;
     }
+*/
 public:
     int maxProfit(vector<int>& prices) {
         /*
@@ -29,7 +31,6 @@ public:
         
         int n = prices.size();
         int profit = INT_MIN;
-        vector<vector<int>> dp(n+1, vector<int>(2, 0));
         vector<int> prev(2);
         vector<int> curr(2);
         
