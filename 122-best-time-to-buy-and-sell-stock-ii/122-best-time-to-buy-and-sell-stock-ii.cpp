@@ -29,6 +29,7 @@ public:
         return recurse(prices, prices.size(), 0, true, dp);
         */
         
+        /*
         int n = prices.size();
         int profit = INT_MIN;
         vector<int> prev(2);
@@ -48,5 +49,21 @@ public:
         }
         
         return prev[1];
+        */
+        
+        int n = prices.size();
+        int prevBuy = 0, prevNotBuy = 0;
+        int currBuy = 0, currNotBuy = 1;
+        
+        for(int i = n - 1; i >= 0; i--) {
+            for(int buy = 0; buy <= 1; buy++) {
+                currBuy = max(-prices[i] + prevNotBuy, prevBuy);
+                currNotBuy = max(prices[i] + prevBuy, prevNotBuy);
+            }
+            prevBuy = currBuy;
+            prevNotBuy = currNotBuy;
+        }
+        
+        return prevBuy;
     }
 };
