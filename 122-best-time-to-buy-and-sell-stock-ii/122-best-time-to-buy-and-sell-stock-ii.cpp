@@ -42,8 +42,8 @@ public:
                     profit = max(prices[i] + prev[1], prev[0]);
                 }
                 curr[buy] = profit;
-                prev[buy] = profit;
             }
+            prev = curr;
         }
         
         return prev[1];
