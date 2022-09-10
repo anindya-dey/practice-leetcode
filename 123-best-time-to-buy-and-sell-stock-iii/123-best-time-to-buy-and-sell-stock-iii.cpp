@@ -1,4 +1,5 @@
 class Solution {
+/*
 private:
     int f(vector<int> &prices, int n, int i, int buy, int cap, vector<vector<vector<int>>> &dp) {
         if((i == n) || (cap == 0)) return 0;
@@ -42,6 +43,7 @@ private:
         
         return dp[i][txn] = profit;
     }
+*/
 public:
     int maxProfit(vector<int>& prices) {
         /*
@@ -77,8 +79,32 @@ public:
         return after[1][2];
         */
   
+        
+        /*
         int n = prices.size();
         vector<vector<int>> dp(n, vector<int>(4, -1));
         return g(prices, n, 0, 0, dp);
+        */
+        
+        int n = prices.size();
+        vector<vector<int>> dp(n+1, vector<int>(5, 0));
+        
+        for(int i = n - 1; i >= 0; i--) {
+            for(int txn = 0; txn < 4; txn++) {
+                if((txn % 2) == 0) {
+                    dp[i][txn] = max(
+                        -prices[i] + dp[i+1][txn+1],
+                        dp[i+1][txn]
+                    );
+                } else {
+                    dp[i][txn] = max(
+                        prices[i] + dp[i+1][txn+1],
+                        dp[i+1][txn]
+                    );
+                }
+            }
+        }
+        
+        return dp[0][0];
     }
 };
