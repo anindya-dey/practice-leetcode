@@ -25,6 +25,7 @@ public:
     int maxProfit(vector<int>& prices) {
         
         /*
+         *
          * RECURSION WITH DP
          *
          */
@@ -36,7 +37,9 @@ public:
         
         
         /*
+         *
          * TABULATION
+         *
          */
         /*
         int n = prices.size();
@@ -62,6 +65,7 @@ public:
         
         
         /*
+         * 
          * PREV and CURR values only
          *
          */
@@ -82,6 +86,7 @@ public:
         */
         
         /*
+         * 
          * MINIMUM number of variables only
          *
          */
