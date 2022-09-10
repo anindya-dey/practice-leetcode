@@ -51,6 +51,7 @@ public:
         return prev[1];
         */
         
+        /*
         int n = prices.size();
         int prevBuy = 0, prevNotBuy = 0;
         int currBuy = 0, currNotBuy = 1;
@@ -64,5 +65,16 @@ public:
         }
         
         return prevBuy;
+        */
+        
+        int n = prices.size();
+        int buy = 0, notBuy = 0;
+        
+        for(int i = n - 1; i >= 0; i--) {
+            buy = max(-prices[i] + notBuy, buy);
+            notBuy = max(prices[i] + buy, notBuy);
+        }
+        
+        return buy;
     }
 };
