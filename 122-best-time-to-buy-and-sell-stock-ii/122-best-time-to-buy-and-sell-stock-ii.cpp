@@ -23,12 +23,21 @@ private:
 */
 public:
     int maxProfit(vector<int>& prices) {
+        
+        /*
+         * RECURSION WITH DP
+         *
+         */
         /*
         int n = prices.size();
         vector<vector<int>> dp(n, vector<int>(2, -1));
         return recurse(prices, prices.size(), 0, true, dp);
         */
         
+        
+        /*
+         * TABULATION
+         */
         /*
         int n = prices.size();
         int profit = INT_MIN;
@@ -51,6 +60,11 @@ public:
         return prev[1];
         */
         
+        
+        /*
+         * PREV and CURR values only
+         *
+         */
         /*
         int n = prices.size();
         int prevBuy = 0, prevNotBuy = 0;
@@ -67,6 +81,10 @@ public:
         return prevBuy;
         */
         
+        /*
+         * MINIMUM number of variables only
+         *
+         */
         int n = prices.size();
         int buy = 0, notBuy = 0;
         
