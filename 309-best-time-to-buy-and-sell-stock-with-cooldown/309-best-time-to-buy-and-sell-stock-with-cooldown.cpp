@@ -31,26 +31,20 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         int n = prices.size();
-        
-        vector<int> ahead2(2, 0);
-        vector<int> ahead1(2, 0);
-        vector<int> curr(2, 0);
+        vector<vector<int>> dp(n+2, vector<int>(2, 0));
         
         for(int i = n-1; i >= 0; i--) {
-            curr[1] = max(
-                -prices[i] + ahead1[0],
-                ahead1[1]
+            dp[i][1] = max(
+                -prices[i] + dp[i+1][0],
+                dp[i+1][1]
             );
 
-            curr[0] = max(
-                prices[i] + ahead2[1],
-                ahead1[0]
+            dp[i][0] = max(
+                prices[i] + dp[i+2][1],
+                dp[i+1][0]
             );
-            
-            ahead2 = ahead1;
-            ahead1 = curr;
         }
         
-        return curr[1];
+        return dp[0][1];
     }
 };
