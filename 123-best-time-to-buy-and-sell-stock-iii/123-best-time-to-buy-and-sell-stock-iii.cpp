@@ -109,6 +109,7 @@ public:
         return dp[0][0];
         */
         
+        /*
         int n = prices.size();
         vector<int> ahead(5);
         vector<int> curr(5);
@@ -131,5 +132,27 @@ public:
         }
         
         return ahead[0];
+        */
+        
+        int n = prices.size();
+        vector<int> res(5);
+        
+        for(int i = n - 1; i >= 0; i--) {
+            for(int txn = 0; txn < 4; txn++) {
+                if((txn % 2) == 0) {
+                    res[txn] = max(
+                        -prices[i] + res[txn+1],
+                        res[txn]
+                    );
+                } else {
+                    res[txn] = max(
+                        prices[i] + res[txn+1],
+                        res[txn]
+                    );
+                }
+            }
+        }
+        
+        return res[0];
     }
 };
