@@ -5,11 +5,13 @@ public:
         string res = s;
         
         while(l < r) {
-            if(s[l] > s[r]) {
-                res[l] = s[r];
-            } else {
-                res[r] = s[l];
-            }
+            // if(s[l] > s[r]) {
+            //     res[l] = s[r];
+            // } else {
+            //     res[r] = s[l];
+            // }
+            
+            res[l] = res[r] = min(s[l], s[r]);
             
             l++;
             r--;
