@@ -26,11 +26,11 @@ public:
         
         int count = 0;
         unordered_set<int> s = {};
-        for(int i = 0; i < nums.size(); i++) {
-            if ( (s.find(nums[i] - diff) != s.end()) && (s.find(nums[i] - (2*diff)) != s.end()) ) {
+        for(int num : nums) {
+            if ( (s.find(num - diff) != s.end()) && (s.find(num - (2*diff)) != s.end()) ) {
                 count++;
             }
-            s.insert(nums[i]);
+            s.insert(num);
         }
         return count;
     }
