@@ -11,31 +11,34 @@ class Solution {
         unordered_map<int, int> m = {};
         
         while(front < N) {
-            int fruit = fruits[front];
-            auto it = m.find(fruit);
+            int front_fruit = fruits[front];
             
-            if(it == m.end()) {
-                m[fruit] = 0;
+            if(m.find(front_fruit) == m.end()) {
+                m[front_fruit] = 0;
             }
             
-            m[fruit]++;
+            m[front_fruit]++;
             
             while(m.size() > numberOfBaskets) {
-                auto itr = m.find(fruits[rear]);
+                int rear_fruit = fruits[rear];
                 
-                if(itr != m.end()) {
+                if(m.find(rear_fruit) != m.end()) {
                     m[fruits[rear]]--;
-                    if(m[fruits[rear]] == 0) m.erase(itr);
                 }
+                
+                if(m[rear_fruit] == 0) {
+                    m.erase(rear_fruit);
+                }
+                
                 rear++;
             }
             
-            int currTotal = 0;
+            int tempTotal = 0;
             for(auto i : m) {
-                currTotal += i.second;
+                tempTotal += i.second;
             }
-        
-            total = max(total, currTotal);
+            total = max(total, tempTotal);
+            
             front++;
         }
         
