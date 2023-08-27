@@ -27,22 +27,22 @@ class Solution{
     int tour(petrolPump p[],int n)
     {
         int startingPoint = 0;
-        int currFuel = 0;
+        int remainingFuel = 0;
         int totalFuel = 0;
         
         for(int i = 0; i < n; i++) {
-            currFuel += p[i].petrol - p[i].distance;
+            remainingFuel += p[i].petrol - p[i].distance;
             
-            if(currFuel < 0) {
-                currFuel = 0;
+            if(remainingFuel < 0) {
+                remainingFuel = 0;
                 startingPoint = i+1;
             }
-            
             
             totalFuel += p[i].petrol - p[i].distance;
         }
         
-        return (totalFuel >= 0) ? startingPoint : -1;
+        // if totalFuel is negative, there are no possible starting point
+        return (totalFuel < 0) ? -1 : startingPoint;
     }
 };
 
