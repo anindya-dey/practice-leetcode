@@ -42,7 +42,7 @@ class Solution{
             totalFuel += p[i].petrol - p[i].distance;
         }
         
-        return (totalFuel > 0) ? startingPoint : -1;
+        return (totalFuel >= 0) ? startingPoint : -1;
     }
 };
 
