@@ -7,14 +7,14 @@ public:
             int l = 0, r = n - 1;
             while(l < r) {
                 swap(image[i][l], image[i][r]);
-                image[i][l] = image[i][l] == 0 ? 1 : 0;
-                image[i][r] = image[i][r] == 0 ? 1 : 0;
+                image[i][l] ^= 1;
+                image[i][r] ^= 1;
                 l++;
                 r--;
             }
 
             if(l == r) {
-               image[i][l] = image[i][l] == 0 ? 1 : 0; 
+               image[i][l] ^= 1; 
             }
         }
 
